@@ -22,6 +22,7 @@ public class Main extends Application {
 	        primaryStage.setMaxWidth(750);
 	        primaryStage.show();
 	        //записує в файл масв байт
+			//іваі
 	        FileOutputStream fos = new FileOutputStream(new File("C:\\Users\\Roman Chernish\\Desktop\\someFile"));
 	        fos.write(Chiphers.xorЕncrypt("волапотвоdfgdfgdfgdалп", "авпловаптв"));
 	        fos.close();
@@ -33,5 +34,6 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+		System.out.print("GOOD");
 	}
 }
