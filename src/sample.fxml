@@ -1,64 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
 <?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="357.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <TabPane layoutY="38.0" prefHeight="309.0" prefWidth="647.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Зашифрувати">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="270.0" prefWidth="688.0">
-                     <children>
-                        <Button layoutX="20.0" layoutY="225.0" mnemonicParsing="false" onAction="#btnEnycpypt" prefHeight="31.0" prefWidth="122.0" text="Зашифрувати" />
-                        <TextArea fx:id="encryptTextArea" layoutX="7.0" layoutY="28.0" prefHeight="185.0" prefWidth="634.0" text="&#10;" />
-                        <TextField fx:id="encryptTextField" layoutX="432.0" layoutY="225.0" />
-                        <Label layoutX="20.0" layoutY="4.0" prefHeight="21.0" prefWidth="117.0" text="Введіть текст:" />
-                        <Label layoutX="381.0" layoutY="230.0" prefHeight="21.0" prefWidth="51.0" text="Ключ:" />
-                        <ComboBox layoutX="238.0" layoutY="225.0" prefHeight="31.0" prefWidth="131.0" />
-                        <Label layoutX="159.0" layoutY="230.0" prefHeight="21.0" prefWidth="79.0" text="Алгоритм:" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="Розшифрувати">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Button layoutX="16.0" layoutY="223.0" mnemonicParsing="false" text="Розшифрувати" />
-                        <TextArea layoutX="8.0" layoutY="29.0" prefHeight="185.0" prefWidth="634.0" />
-                        <TextField layoutX="431.0" layoutY="223.0" />
-                        <Label layoutX="14.0" layoutY="4.0" prefHeight="21.0" prefWidth="126.0" text="Отримайте текст:" />
-                        <Label layoutX="382.0" layoutY="228.0" prefHeight="21.0" prefWidth="49.0" text="Ключ:" />
-                        <ComboBox layoutX="235.0" layoutY="223.0" prefHeight="31.0" prefWidth="134.0" />
-                        <Label layoutX="156.0" layoutY="228.0" prefHeight="21.0" prefWidth="79.0" text="Алгоритм:" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
-      <MenuBar layoutY="-1.0" prefHeight="41.0" prefWidth="647.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </children>
+<AnchorPane prefHeight="395.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller22">
+  <children>
+    <TabPane layoutY="38.0" prefHeight="341.0" prefWidth="647.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="Зашифрувати">
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="302.0" prefWidth="647.0">
+              <children>
+                <Button fx:id="button_encrypt" layoutX="493.0" layoutY="226.0" mnemonicParsing="false" onAction="#encryptClick" prefHeight="31.0" prefWidth="122.0" text="Зашифрувати" />
+                <TextArea fx:id="textArea_encrypt" layoutX="7.0" layoutY="28.0" prefHeight="185.0" prefWidth="634.0" text="&#10;" />
+                <TextField fx:id="textField_encrypt" layoutX="287.0" layoutY="226.0" />
+                <Label layoutX="20.0" layoutY="4.0" prefHeight="21.0" prefWidth="117.0" text="Введіть текст:" />
+                <Label layoutX="236.0" layoutY="231.0" prefHeight="21.0" prefWidth="51.0" text="Ключ:" />
+                <ComboBox fx:id="comboBox_encrypt" layoutX="93.0" layoutY="226.0" prefHeight="31.0" prefWidth="131.0" />
+                <Label layoutX="14.0" layoutY="231.0" prefHeight="21.0" prefWidth="79.0" text="Алгоритм:" />
+                        <Button fx:id="btn_keyGenerate" layoutX="286.0" layoutY="264.0" mnemonicParsing="false" onAction="#generateKeyClick" prefHeight="31.0" prefWidth="189.0" text="Згенерувати ключ" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Розшифрувати">
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Button fx:id="button_dencrypt" layoutX="490.0" layoutY="223.0" mnemonicParsing="false" onAction="#dencryptClick" text="Розшифрувати" />
+                <TextArea fx:id="textArea_dencrypt" layoutX="8.0" layoutY="29.0" prefHeight="185.0" prefWidth="634.0" />
+                <TextField fx:id="textField_dencrypt" layoutX="289.0" layoutY="223.0" />
+                <Label layoutX="14.0" layoutY="4.0" prefHeight="21.0" prefWidth="126.0" text="Отримайте текст:" />
+                <Label layoutX="240.0" layoutY="228.0" prefHeight="21.0" prefWidth="49.0" text="Ключ:" />
+                <ComboBox fx:id="comboBox_dencrypt" layoutX="93.0" layoutY="223.0" prefHeight="31.0" prefWidth="134.0" />
+                <Label layoutX="14.0" layoutY="228.0" prefHeight="21.0" prefWidth="79.0" text="Алгоритм:" />
+                        <Button fx:id="button_keyDownload" layoutX="288.0" layoutY="257.0" mnemonicParsing="false" onAction="#keyDownloadClick" prefHeight="31.0" prefWidth="189.0" text="Завантажити ключ" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+    <MenuBar layoutY="-1.0" prefHeight="41.0" prefWidth="647.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Close" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Delete" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </children>
 </AnchorPane>
